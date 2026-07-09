@@ -40,6 +40,29 @@ El script `create_user_test.py` ejecuta **10 pruebas funcionales específicas** 
 
 ---
 
+## Mi Rol y Decisiones de QA
+
+En este proyecto trabajé como **QA Automation Engineer Backend**. Mi objetivo fue crear pruebas automatizadas para asegurar que la API funcione correctamente y que la información se guarde de verdad en el sistema, aplicando un enfoque de **Caja Gris** (revisar el código/API y mirar también la base de datos).
+
+### ¿Qué analicé?
+* **El endpoint de usuarios:** Revisé a fondo el flujo para crear usuarios nuevos, comparando lo que pedía la documentación técnica contra lo que el servidor respondía en la vida real.
+
+### Criterios y validaciones que implementé
+Para dar por buena una prueba de la API, configuré mis scripts para verificar tres cosas clave:
+* **Códigos de estado HTTP:** Que el servidor responda exactamente lo esperado (como un `201 Created` si todo salió bien, o un `400 Bad Request` si los datos están mal).
+* **Esquemas JSON:** Validar que la estructura y el formato de los datos que devuelve la API sean los correctos.
+* **Tiempos de respuesta:** Monitorear que el servidor no tarde demasiado en responder.
+
+### Riesgos cubiertos y desafíos superados
+A nivel de Backend, aprendí que una respuesta exitosa no siempre significa que todo esté bien. Por eso me enfoqué en cubrir estos riesgos:
+* **Falsos positivos (El gran reto):** No me quedé solo con el mensaje de éxito de la API (`HTTP 201`). Programé mis scripts para que se conectaran directamente a la **Base de Datos** mediante código, verificando con consultas SQL que el usuario realmente se hubiera guardado en la tabla.
+* **Usuarios duplicados:** Validé que el sistema bloquee correctamente los reintentos de registro si se envía el mismo correo o ID dos veces.
+
+### Aprendizajes clave
+Este proyecto me abrió los ojos sobre cómo funciona el Backend. Aprendí a conectar mis herramientas de automatización con bases de datos (SQL/NoSQL) y entendí que probar una API no es solo mandar una petición y ver el resultado, sino asegurarse de que los datos queden bien guardados y seguros en el sistema.
+
+---
+
 ## 🚀 Cómo Ejecutar las Pruebas Localmente
 
 ### Prerrequisitos
